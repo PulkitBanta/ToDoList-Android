@@ -66,6 +66,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         items.remove(position);
         adapter.notifyDataSetChanged();
         FileHelper.writeData(items, this);
-        Toast.makeText(this, "Deleted Item", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Item Deleted", Toast.LENGTH_SHORT).show();
     }
 }
