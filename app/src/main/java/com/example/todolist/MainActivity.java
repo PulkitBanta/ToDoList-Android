@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private EditText itemET;
     private Button btn;
+    private Button clear;
     private ListView itemList;
 
     private ArrayList <String> items;
@@ -30,12 +31,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         itemET = findViewById(R.id.item_edit_text);
         btn = findViewById(R.id.add_btn);
         itemList = findViewById(R.id.item_list);
+        clear = findViewById(R.id.clear_btn);
 
         items = FileHelper.readData(this);
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
         itemList.setAdapter(adapter);
 
+        clear.setOnClickListener(this);
         btn.setOnClickListener(this);
         itemList.setOnItemClickListener(this);
     }
@@ -43,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch(v.getId()) {
+//            case to delete an item on clicking it
             case R.id.add_btn:
                 String itemEntered = itemET.getText().toString();
 
@@ -53,10 +57,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 adapter.add(itemEntered);
                 itemET.setText("");
-
+                // writing data into a file
                 FileHelper.writeData(items, this);
-
                 Toast.makeText(this, "Item Added", Toast.LENGTH_SHORT).show();
+
+                break;
+
+//             case to clear all items
+            case R.id.clear_btn:
+                items.clear();
+                adapter.notifyDataSetChanged();
+//                clearing data from the file
+                FileHelper.writeData(items, this);
+                Toast.makeText(this, "All Items Deleted", Toast.LENGTH_SHORT).show();
+
                 break;
         }
     }

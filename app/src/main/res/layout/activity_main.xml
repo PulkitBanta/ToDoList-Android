@@ -7,14 +7,15 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:background="#EBF7E3"
+    android:gravity="center"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="20dp">
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp">
 
         <EditText
             android:id="@+id/item_edit_text"
@@ -37,7 +38,19 @@
     <ListView
         android:id="@+id/item_list"
         android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="12dp"
+        ></ListView>
+
+    <Button
+        android:id="@+id/clear_btn"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"></ListView>
+        android:text="Clear All"
+        android:paddingHorizontal="20dp"
+        android:textColor="#EBF7E3"
+        android:layout_marginBottom="12dp"
+        android:background="#FE8176"></Button>
 
 </LinearLayout>
