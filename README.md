@@ -1,10 +1,6 @@
-# Youtube Music
+# To Do App
 
-A cross platform desktop app for Youtube Music
-
-## Getting Started
-
-The app is based on electron
+A Basic To do app for Android v 5.0 and above.
 
 ### Installing
 
@@ -32,6 +28,7 @@ These android mockups were taken from [Threed](https://threed.io/)
 ## Built With
 
 * [Android Studio](https://developer.android.com/) - Android Studio provides the fastest tools for building apps on every type of Android device.
+* [Java](https://www.java.com/en/)
 
 ## Coming soon
 
